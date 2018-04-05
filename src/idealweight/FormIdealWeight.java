@@ -5,6 +5,7 @@ Created on: April 3, 2018
 Last edited on: April 4, 2018
 */
 package idealweight;
+import java.text.*;
 public class FormIdealWeight extends javax.swing.JFrame {
     /**
      * Creates new form FormIdealWeight
@@ -184,6 +185,7 @@ public class FormIdealWeight extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        DecimalFormat x = new DecimalFormat ("###.##");
         double height, weight;
         height = Double.parseDouble(jTextField1.getText());
         if(jRadioButton1.isSelected())
@@ -191,12 +193,12 @@ public class FormIdealWeight extends javax.swing.JFrame {
             if(jRadioButton3.isSelected())
             {
                 weight = height * height * 25 * 1.15;
-                jLabel6.setText("Ideal weight is: "+weight+"kg.");
+                jLabel6.setText("Ideal weight is: "+x.format(weight)+"kg.");
             }
             else
             {
                 weight = height * height * 25 / 703 * 1.15;
-                jLabel6.setText("Ideal weight is: "+weight+"lbs.");
+                jLabel6.setText("Ideal weight is: "+x.format(weight)+"lbs.");
             }
         }
         else
@@ -204,12 +206,12 @@ public class FormIdealWeight extends javax.swing.JFrame {
           if(jRadioButton3.isSelected())
             {
                 weight = height * height * 25;
-                jLabel6.setText("Ideal weight is: "+weight+"kg.");
+                jLabel6.setText("Ideal weight is: "+x.format(weight)+"kg.");
             }
             else
             {
                 weight = height * height * 25 / 703;
-                jLabel6.setText("Ideal weight is: "+weight+"lbs.");
+                jLabel6.setText("Ideal weight is: "+x.format(weight)+"lbs.");
             }  
         }
     }//GEN-LAST:event_jButton1ActionPerformed
